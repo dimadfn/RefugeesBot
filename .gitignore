@@ -1,3 +1,5 @@
-TelegramBot/obj*
-TelegramBot/debug*
+TelegramBot/obj/
+TelegramBot/debug/
 *.dll
+TelegramBot/bin/
+TelegramBot/.vs/
