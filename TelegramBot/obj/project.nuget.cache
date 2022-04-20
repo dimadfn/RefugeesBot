@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4uC2cDKich0y08bUy/pJkJnTenGq5k8t67EZpL3zHjwocTeMm7yuRbdIenEMO1btLxqOI6/UpFvi1FjofOd3Gg==",
+  "dgSpecHash": "11TcgY7yD21rhCR4Q5GozbMtYm3Ul9YkXVWQt+CeYG2Z7ClMRGtzRh+Obn9Wxs2w+UxyJS3TIIKFJPmpfsNczA==",
   "success": true,
-  "projectFilePath": "C:\\Dev\\Private\\TelegramBot\\TelegramBot.csproj",
+  "projectFilePath": "C:\\Dev\\Private\\TGBots\\RefugeesBot\\TelegramBot\\TelegramBot.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\y.kropochev\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\y.kropochev\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",

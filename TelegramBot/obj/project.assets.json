@@ -158,11 +158,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\Private\\TelegramBot\\TelegramBot.csproj",
+      "projectUniqueName": "C:\\Dev\\Private\\TGBots\\RefugeesBot\\TelegramBot\\TelegramBot.csproj",
       "projectName": "TelegramBot",
-      "projectPath": "C:\\dev\\Private\\TelegramBot\\TelegramBot.csproj",
+      "projectPath": "C:\\Dev\\Private\\TGBots\\RefugeesBot\\TelegramBot\\TelegramBot.csproj",
       "packagesPath": "C:\\Users\\y.kropochev\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\Private\\TelegramBot\\obj\\",
+      "outputPath": "C:\\Dev\\Private\\TGBots\\RefugeesBot\\TelegramBot\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
