@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Text;
+using System.Text.Json;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Extensions.Polling;
@@ -23,6 +24,7 @@ namespace TelegramBot
                 cts.Token);
             var rules = File.ReadAllText("Dictionaries.json");
             _rulesDictionary = JsonSerializer.Deserialize<List<DictionaryItem>>(rules);
+            Console.OutputEncoding = Encoding.UTF8;
             //var me = await botClient.GetMeAsync();
         }
 
@@ -38,20 +40,47 @@ namespace TelegramBot
                 return;
 
             var chatId = update.Message.Chat.Id;
-            var messageText = update.Message.Text;
+            var messageText = update.Message.Text.ToLower();
+            messageText = messageText.Replace("ё", "е");
 
             Console.WriteLine($"Received a '{messageText}' message in chat {chatId}.");
+            var message = string.Empty;
 
+            foreach (var rule in _rulesDictionary)
+            {
+                if (rule.NotKeyvords.Any(_ => messageText.Contains(_)))
+                    break;
 
-            // Echo received message text
-            var sentMessage = await botClient.SendTextMessageAsync(
-                chatId,
-                "Добрый день! Возможно вам поможет закреплённый документ, раздел " + _rulesDictionary[0].Message +
-                "   https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/",
-//                "You said:\n" + messageText,
-                replyToMessageId: update.Message.MessageId,
-                //parseMode: ParseMode.Html,
-                cancellationToken: cancellationToken);
+                if (rule.MandatoryKeyvords.Any() && rule.MandatoryKeyvords.All(_ => messageText.Contains(_)))
+                    message = GetMessage(rule);
+
+                if (message != string.Empty)
+                    break;
+
+                var matchCount = 0;
+                foreach (var keyword in rule.OptionalKeywords)
+                {
+                    if (messageText.Contains(keyword))
+                        matchCount++;
+                    if (matchCount >= rule.AtLeastCount)
+                    {
+                        message = GetMessage(rule);
+                        break;
+                    }
+                }
+            }
+
+            if (!string.IsNullOrEmpty(message))
+                await botClient.SendTextMessageAsync(chatId, message,
+                    replyToMessageId: update.Message.MessageId,
+                    //parseMode: ParseMode.Html,
+                    cancellationToken: cancellationToken);
+        }
+
+        private string GetMessage(DictionaryItem msg)
+        {
+            return "Добрый день! Возможно вам поможет закреплённый документ, раздел " + msg.Message +
+                   "   https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/";
         }
 
         private Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception,

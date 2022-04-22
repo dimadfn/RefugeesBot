@@ -2,9 +2,26 @@
   {
     "Name": "Apparnman",
     "Message": " 'Жильё' ",
-    "MandatoryKeyvords": [ "test" ],
-    "AtLeastKeyvords": [ "квартир", "комнат", "жильё", "Братислав" ],
+    "MandatoryKeyvords": [],
+    "OptionalKeywords": [ "квартир", "комнат", "жилье", "братислав" ],
     "AtLeastCount": 2,
     "NotKeyvords": [ "переночев" ]
+  },
+  {
+    "Name": "Bank account",
+    "Message": " 'Открытие счёта в банке Словакии' ",
+    "MandatoryKeyvords": [ "счет", "банк" ],
+    "OptionalKeywords": [],
+    "AtLeastCount": 1,
+    "NotKeyvords": []
+  },
+  {
+    "Name": "Language",
+    "Message": " 'Изучение языка' ",
+    "MandatoryKeyvords": [  ],
+    "OptionalKeywords": ["курс", "словацк", "учени", "язык"],
+    "AtLeastCount": 2,
+    "NotKeyvords": []
   }
+
 ]
