@@ -48,10 +48,10 @@ namespace TelegramBot
 
             foreach (var rule in _rulesDictionary)
             {
-                if (rule.NotKeyvords.Any(_ => messageText.Contains(_)))
+                if (rule.NotKeywords.Any(_ => messageText.Contains(_)))
                     break;
 
-                if (rule.MandatoryKeyvords.Any() && rule.MandatoryKeyvords.All(_ => messageText.Contains(_)))
+                if (rule.MandatoryKeywords.Any() && rule.MandatoryKeywords.All(_ => messageText.Contains(_)))
                     message = GetMessage(rule);
 
                 if (message != string.Empty)
@@ -79,8 +79,7 @@ namespace TelegramBot
 
         private string GetMessage(DictionaryItem msg)
         {
-            return "Добрый день! Возможно вам поможет закреплённый документ, раздел " + msg.Message +
-                   "   https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/";
+            return "Добрый день! Возможно вам поможет закреплённый документ, раздел " + msg.Message + " " + msg.Url;
         }
 
         private Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception,

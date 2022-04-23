@@ -2,14 +2,16 @@
   {
     "Name": "Apparnman",
     "Message": " 'Жильё' ",
+    "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.m4g67xy0gfzb",
     "MandatoryKeyvords": [],
     "OptionalKeywords": [ "квартир", "комнат", "жилье", "братислав" ],
-    "AtLeastCount": 2,
+    "AtLeastCount": 1,
     "NotKeyvords": [ "переночев" ]
   },
   {
     "Name": "Bank account",
     "Message": " 'Открытие счёта в банке Словакии' ",
+    "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.auyjvjf5qdms",
     "MandatoryKeyvords": [ "счет", "банк" ],
     "OptionalKeywords": [],
     "AtLeastCount": 1,
@@ -18,8 +20,9 @@
   {
     "Name": "Language",
     "Message": " 'Изучение языка' ",
-    "MandatoryKeyvords": [  ],
-    "OptionalKeywords": ["курс", "словацк", "учени", "язык"],
+    "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.13v9lhef8ep2",
+    "MandatoryKeyvords": [],
+    "OptionalKeywords": [ "курс", "словацк", "учени", "язык" ],
     "AtLeastCount": 2,
     "NotKeyvords": []
   }
