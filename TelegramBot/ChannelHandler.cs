@@ -73,13 +73,15 @@ namespace TelegramBot
             if (!string.IsNullOrEmpty(message))
                 await botClient.SendTextMessageAsync(chatId, message,
                     replyToMessageId: update.Message.MessageId,
-                    //parseMode: ParseMode.Html,
+                    disableWebPagePreview: true,
+                    parseMode: ParseMode.Html,
                     cancellationToken: cancellationToken);
         }
 
         private string GetMessage(DictionaryItem msg)
         {
-            return "Добрый день! Возможно вам поможет закреплённый документ, раздел " + msg.Message + " " + msg.Url;
+            return
+                $"Добрый день! Возможно вам поможет закреплённый документ, раздел <a href=\"{msg.Url}\">{msg.Message}</a>";
         }
 
         private Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception,
