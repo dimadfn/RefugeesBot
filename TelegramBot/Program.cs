@@ -1,4 +1,5 @@
-﻿using TelegramBot;
+﻿using System.Text;
+using TelegramBot;
 
 namespace RefugeesBot
 {
@@ -11,7 +12,7 @@ namespace RefugeesBot
 
             var cts = new CancellationTokenSource();
             new ChannelHandler(cts);
-
+            Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Start listening ");
             Console.ReadLine();
 
