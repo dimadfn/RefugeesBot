@@ -1,6 +1,4 @@
-﻿using System.Net;
-using System.Text;
-using System.Text.Json;
+﻿using System.Text.Json;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Extensions.Polling;
@@ -12,7 +10,9 @@ namespace TelegramBot
 {
     public class ChannelHandler
     {
+        private Dictionary<string, uint> _alreadySuggested = new(10000);
         private List<DictionaryItem> _rulesDictionary;
+        private uint lastSuggested;
 
         public ChannelHandler(CancellationTokenSource cts)
         {
@@ -20,7 +20,7 @@ namespace TelegramBot
             //var rules = new WebClient().DownloadString("https://drive.google.com/uc?export=download&id=1f6PJtPOuc31oRYcKp9AdMVf2apWi7acU");
             //_rulesDictionary = JsonSerializer.Deserialize<List<DictionaryItem>>(rules);
 
-            
+
             var botClient = new TelegramBotClient("5304162311:AAG4ngGCK5Kaf9BglhztXAsTl4xt2eF1S1U");
             var receiverOptions = new ReceiverOptions();
             botClient.StartReceiving(
@@ -41,16 +41,21 @@ namespace TelegramBot
                 return;
             if (update.Message.ReplyToMessage != null)
                 return;
+
             //var rules = new WebClient().DownloadString("https://drive.google.com/uc?export=download&id=1f6PJtPOuc31oRYcKp9AdMVf2apWi7acU");
-            var rules = File.ReadAllText("Dictionaries.json");
+            var rules = File.ReadAllText("Dictionaries.ru.json");
             _rulesDictionary = JsonSerializer.Deserialize<List<DictionaryItem>>(rules);
-            
+
+            rules = File.ReadAllText("Dictionaries.ua.json");
+            _rulesDictionary.AddRange(JsonSerializer.Deserialize<List<DictionaryItem>>(rules));
+
+
             var chatId = update.Message.Chat.Id;
             var messageText = update.Message.Text.ToLower();
             messageText = messageText.Replace("ё", "е");
 
             Console.WriteLine($"Received a '{messageText}' message in chat {chatId}.");
-            var message = string.Empty;
+            Suggestion message = null;
 
             foreach (var rule in _rulesDictionary)
             {
@@ -58,9 +63,9 @@ namespace TelegramBot
                     continue;
 
                 if (rule.MandatoryKeywords.Any() && rule.MandatoryKeywords.All(_ => messageText.Contains(_)))
-                    message = GetMessage(rule);
+                    message = new Suggestion(rule);
 
-                if (message != string.Empty)
+                if (message != null)
                     break;
 
                 var matchCount = 0;
@@ -70,18 +75,31 @@ namespace TelegramBot
                         matchCount++;
                     if (matchCount >= rule.AtLeastCount)
                     {
-                        message = GetMessage(rule);
+                        message = new Suggestion(rule);
                         break;
                     }
                 }
             }
 
-            if (!string.IsNullOrEmpty(message))
-                await botClient.SendTextMessageAsync(chatId, message,
+            if (message != null)
+            {
+                if (update.Message.From != null &&
+                    _alreadySuggested.ContainsKey(message.RuleName + "_" + update.Message.From.Id))
+                    return;
+
+                await botClient.SendTextMessageAsync(chatId, message.Message,
                     replyToMessageId: update.Message.MessageId,
                     disableWebPagePreview: true,
                     parseMode: ParseMode.Html,
                     cancellationToken: cancellationToken);
+
+                _alreadySuggested.Add(message.RuleName + "_" + update.Message.From.Id, lastSuggested++);
+                if (lastSuggested > 9990)
+                {
+                    _alreadySuggested = _alreadySuggested.ToList().Where(_ => _.Value > 100)
+                        .ToDictionary(key => key.Key, val => val.Value);
+                }
+            }
         }
 
         private string GetMessage(DictionaryItem msg)
