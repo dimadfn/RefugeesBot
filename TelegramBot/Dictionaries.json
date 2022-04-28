@@ -1,227 +1,227 @@
 ﻿[
   {
-    "Name": "Apparnman",
+    "Name": "Appartman",
     "Message": " 'Жильё' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.m4g67xy0gfzb",
-    "MandatoryKeywords": ["ищу жилье"],
-    "OptionalKeywords": [ "квартир", "комнат", "жиль", "ночле", "ночев", "аренд", "снять", "сниму"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["нашла", "нашёл", "нашли", "предлага", "советую", "рекомендую"]
+    "MandatoryKeywords": [],
+    "OptionalKeywords": [ "квартир", "комнат", "жиль", "ночле", "ночев", "аренд", "снять", "сниму" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "нашла", "нашёл", "нашли", "предлага", "советую", "рекомендую" ]
   },
   {
     "Name": "Realtor",
     "Message": " 'Риелтор' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.fiegaebuv84i",
-    "MandatoryKeywords": ["риелтор"],
-    "OptionalKeywords": [],
+    "MandatoryKeywords": [],
+    "OptionalKeywords": [ "риелтор", "риэлтор" ],
     "AtLeastCount": 1,
-    "NotKeywords": ["нашла", "нашёл", "нашли", "предлага", "советую", "рекомендую"]
+    "NotKeywords": [ "нашла", "нашёл", "нашли", "предлага", "советую", "рекомендую" ]
   },
   {
     "Name": "Humanitarian assistance",
     "Message": " 'Материальная помощь' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.7xsrc1b5w21x",
     "MandatoryKeywords": [],
-    "OptionalKeywords": ["гуманитарн", "материальн", "продукт", "вещ", "одежд", "пункт", "выдач", "получить"],
+    "OptionalKeywords": [ "гуманитарн", "материальн", "продукт", "вещ", "одежд", "пункт", "выдач" ],
     "AtLeastCount": 2,
-    "NotKeywords": ["нашла", "нашёл", "нашли", "предлага", "был", "получил", "получила", "получили", "советую", "рекомендую"]
+    "NotKeywords": [ "нашла", "нашёл", "нашли", "предлага", "был", "получил", "получила", "получили", "советую", "рекомендую" ]
   },
   {
     "Name": "Foreign police",
     "Message": " 'Регистрация в полиции' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.1w46mu48m2gi",
-    "MandatoryKeywords": ["полиц"],
-    "OptionalKeywords": ["регистрац", "проживан", "размещен", "адрес", "убежищ", "получить", "статус", "бежен", "смен", "поменять", "изменить"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["получил", "получила", "получили", "советую", "рекомендую"]
+    "MandatoryKeywords": [],
+    "OptionalKeywords": [ "регистрац", "полиц", "проживан", "размещен", "адрес", "убежищ", "получить", "статус", "бежен" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "получил", "получила", "получили", "советую", "рекомендую" ]
   },
   {
     "Name": "Urgent care",
     "Message": " 'Срочная медицинская помощь' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.plbpk243pw3m",
-    "MandatoryKeywords": ["неотложная"],
-    "OptionalKeywords": ["срочн", "экстренная", "медицинск", "помощ", "остр", "боль", "болит"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["получил", "получила", "получили", "советую", "рекомендую"]
+    "MandatoryKeywords": [ "неотложн" ],
+    "OptionalKeywords": [ "экстренная", "медицинск", "помощ", "остр", "боль", "болит" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "получил", "получила", "получили", "советую", "рекомендую" ]
   },
   {
     "Name": "Psychological help",
     "Message": " 'Психологическая помощь' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.vbvdnqedq6xs",
-    "MandatoryKeywords": ["психолог"],
+    "MandatoryKeywords": [ "психолог" ],
     "OptionalKeywords": [],
     "AtLeastCount": 1,
-    "NotKeywords": ["нашла", "нашёл", "нашли", "предлага", "был", "получил", "получила", "получили", "оказыва", "окажу", "советую", "рекомендую"]
+    "NotKeywords": [ "нашла", "нашёл", "нашли", "предлага", "был", "получил", "получила", "получили", "оказыва", "окажу", "советую", "рекомендую" ]
   },
   {
     "Name": "Dentist",
     "Message": " 'Стоматология' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.mep1azer419u",
-    "MandatoryKeywords": ["стоматолог", "зуб"],
-    "OptionalKeywords": [],
+    "MandatoryKeywords": [ "стоматолог" ],
+    "OptionalKeywords": [ "зуб", "пломба" ],
     "AtLeastCount": 1,
-    "NotKeywords": ["нашла", "нашёл", "нашли", "предлага", "был", "оказыва", "окажу", "советую", "рекомендую"]
+    "NotKeywords": [ "нашла", "нашёл", "нашли", "предлага", "был", "оказыва", "окажу", "советую", "рекомендую" ]
   },
   {
     "Name": "Medicine info",
     "Message": " 'Медицина: посещение врача' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.ov00u2obyptq",
     "MandatoryKeywords": [],
-    "OptionalKeywords": ["подскажите", "врач", "клиника", "больниц", "болит", "болезн", "медицин", "страховк", "попасть", "осмотр", "беремен", "род"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["нашла", "нашёл", "нашли", "предлага", "был", "оказыва", "окажу", "советую", "рекомендую"]
+    "OptionalKeywords": [ "клиника", "больниц", "болит", "болезн", "медицин", "страховк", "беремен", "роды", "рожать" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "нашла", "нашёл", "нашли", "предлага", "был", "оказыва", "окажу", "советую", "рекомендую", "родит" ]
   },
   {
     "Name": "Medicine search",
     "Message": " 'Медицина: поиск врача' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.qkf4g7dlc9qn",
-    "MandatoryKeywords": ["ищу врача"],
-    "OptionalKeywords": ["подскажите", "врач", "доктор", "педиатр", "терапевт", "попасть", "осмотр"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["нашла", "нашёл", "нашли", "предлага", "был", "оказыва", "окажу", "советую", "рекомендую"]
+    "MandatoryKeywords": [],
+    "OptionalKeywords": [ "врач", "доктор", "педиатр", "терапевт", "попасть", "осмотр" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "нашла", "нашёл", "нашли", "предлага", "был", "оказыва", "окажу", "советую", "рекомендую" ]
   },
   {
     "Name": "COVID-19",
     "Message": " 'Вакцинация и тестирование на COVID-19' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.x6cs7b20qklq",
-    "MandatoryKeywords": ["ковид", "covid"],
-    "OptionalKeywords": ["вакцин", "сертификат", "доз", "сделать", "korona", "бустер", "тест", "ПЦР", "PCR", "антиген", "antigen", "самотест", "greenpass"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["болел", "сделал", "не верю", "заговор", "советую", "рекомендую"]
+    "MandatoryKeywords": [ "ковид", "covid" ],
+    "OptionalKeywords": [ "вакцин", "сертификат", "доз", "сделать", "korona", "бустер", "тест", "ПЦР", "PCR", "антиген", "antigen", "самотест", "greenpass" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "болел", "сделал", "не верю", "заговор", "советую", "рекомендую" ]
   },
   {
     "Name": "Drugs",
     "Message": " 'Лекарства' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.wxp95dih7k49",
-    "MandatoryKeywords": ["лекарств"],
-    "OptionalKeywords": ["найти", "получить", "купить", "рецепт", "аналог", "таблет"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["нашла", "нашёл", "нашли", "предлага", "был", "оказыва", "окажу","продам", "продаю", "советую", "рекомендую"]
+    "MandatoryKeywords": [],
+    "OptionalKeywords": [ "рецепт", "лекарств", "таблет" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "нашла", "нашёл", "нашли", "предлага", "был", "оказыва", "окажу", "продам", "продаю", "советую", "рекомендую" ]
   },
   {
     "Name": "Financial help",
     "Message": " 'Финансовая помощь' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.59xv3j4drfsu",
-    "MandatoryKeywords": ["пособи"],
-    "OptionalKeywords": ["получить", "оформить", "помощь", "выплат", "государств", "деньги", "денег", "денежн", "компенсац", "размер"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["пришла", "пришли", "получил", "придут", "придет", "советую", "рекомендую"]
+    "MandatoryKeywords": [],
+    "OptionalKeywords": [ "пособи", "деньги", "денег", "денеж", "выплат", "государств", "компенсац" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "пришла", "пришли", "получил", "придут", "придет", "советую", "рекомендую" ]
   },
   {
     "Name": "Bank account",
     "Message": " 'Открытие счёта в банке' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.auyjvjf5qdms",
-    "MandatoryKeywords": [ "счет", "банк" ],
-    "OptionalKeywords": ["открыть счет"],
-    "AtLeastCount": 1,
-    "NotKeywords": ["открыл", "сходил", "открою", "схожу", "закрыть", "получить", "советую", "рекомендую"]
+    "MandatoryKeywords": [ "открыть счет" ],
+    "OptionalKeywords": [ "счет", "банк", "открыть" ],
+    "AtLeastCount": 2,
+    "NotKeywords": [ "открыл", "сходил", "открою", "схожу", "закрыть", "получить", "советую", "рекомендую" ]
   },
   {
     "Name": "Money exchange",
     "Message": " 'Обмен валюты' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.tpl338fsy0vl",
-    "MandatoryKeywords": [ "обмен валют", "поменять валюту"],
-    "OptionalKeywords": ["обмен", "поменять", "гривны", "сдать" ],
-    "AtLeastCount": 1,
-    "NotKeywords": ["открыл", "сходил", "был", "открою", "схожу", "закрыть", "получить", "менял", "меняю", "снял", "советую", "рекомендую"]
+    "MandatoryKeywords": [],
+    "OptionalKeywords": [ "обмен", "валют", "поменять", "гривны", "сдать", "курс" ],
+    "AtLeastCount": 2,
+    "NotKeywords": [ "открыл", "сходил", "был", "открою", "схожу", "закрыть", "получить", "менял", "меняю", "снял", "советую", "рекомендую" ]
   },
   {
     "Name": "Language",
     "Message": " 'Изучение языка' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.13v9lhef8ep2",
     "MandatoryKeywords": [],
-    "OptionalKeywords": [ "курс", "словацк", "учени", "язык", "учить", "словар", "приложен"],
+    "OptionalKeywords": [ "курсы", "словацк", "язык", "учить", "словар", "приложен" ],
     "AtLeastCount": 2,
-    "NotKeywords": ["школа", "институт", "ВУЗ", "был", "учил", "ходил", "пойду", "хожу", "учу", "иду", "советую", "рекомендую"]
+    "NotKeywords": [ "школа", "институт", "ВУЗ", "был", "учил", "ходил", "пойду", "хожу", "учу", "иду", "советую", "рекомендую" ]
   },
   {
     "Name": "Public transport",
     "Message": " 'Общественный транспорт' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.inlh3lounw1z",
-    "MandatoryKeywords": ["общественный транспорт"],
-    "OptionalKeywords": [ "проезд", "доехать", "автобус", "поезд", "добраться", "билет", "маршрут", "вокзал"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["был", "ходил", "пойду", "хожу", "советую", "рекомендую"]
+    "MandatoryKeywords": [ "общественный транспорт" ],
+    "OptionalKeywords": [ "транспорт", "проезд", "доехать", "автобус", "трамвай", "поезд", "добраться", "билет", "маршрут", "вокзал", "расписание" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "был", "ходил", "пойду", "хожу", "советую", "рекомендую" ]
   },
   {
     "Name": "Private transport",
     "Message": " 'Личный транспорт' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.kbg3aauvkkg",
-    "MandatoryKeywords": ["авто"],
-    "OptionalKeywords": [ "виньетк", "оплат", "дорог", "ремонт", "страхов", "гринкарт", "парков"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["был", "ходил", "пойду", "хожу", "ехал", "купил", "советую", "рекомендую"]
+    "MandatoryKeywords": [],
+    "OptionalKeywords": [ "авто", "машин", "виньетк", "дорог", "ремонт", "страхов", "гринкарт", "парков" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "был", "ходил", "пойду", "хожу", "ехал", "купил", "советую", "рекомендую", "дорогой", "дорогая", "дорогое", "автомат" ]
   },
   {
     "Name": "Jobs search",
     "Message": " 'Поиск работы' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.2non377v3q24",
-    "MandatoryKeywords": ["найти работу"],
-    "OptionalKeywords": [ "работ", "ищу", "найти", "ваканси"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["был", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую"]
+    "MandatoryKeywords": [ "найти работу" ],
+    "OptionalKeywords": [ "работ", "ищу", "ваканси" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "был", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "работает", "работают" ]
   },
   {
     "Name": "Schools and kindergardens",
     "Message": " 'Школа и детский сад' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.4eueq14hbdpv",
     "MandatoryKeywords": [],
-    "OptionalKeywords": [ "школ", "сад", "учеб"],
+    "OptionalKeywords": [ "школ", "сад", "учеб" ],
     "AtLeastCount": 1,
-    "NotKeywords": ["был", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую"]
+    "NotKeywords": [ "был", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "бот" ]
   },
   {
     "Name": "Shops",
     "Message": " 'Магазины' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.slvaep96acb0",
     "MandatoryKeywords": [],
-    "OptionalKeywords": [ "купить", "продукт", "одежд", "техник", "электроник", "товары для дома", "товаров для дома", "строительн", "ремонт", "интернет", "онлайн-магазин", "б/у", "частн", "объявлени" ],
-    "AtLeastCount": 2,
-    "NotKeywords": ["был", "купил", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "ходить", "брал", "нашёл", "нашла", "нашли"]
+    "OptionalKeywords": [ "продукт", "одежд", "техник", "электроник", "товар", "строительн", "ремонт", "интернет", "онлайн-магазин", "б/у", "частн", "объявлени" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "был", "купил", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "ходить", "брал", "нашёл", "нашла", "нашли" ]
   },
   {
     "Name": "Connections",
     "Message": " 'Телефонная связь и интернет' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.nfo8uuw14ihy",
-    "MandatoryKeywords": ["пополнить телефон"],
-    "OptionalKeywords": [ "тариф", "интернет", "выбрать", "SIM-карта", "оплатить", "02", "Orange", "Telekom", "4ka", "4ка", "безлимит"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["был", "купил", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "ходить", "брал", "нашёл", "нашла", "нашли"]
+    "MandatoryKeywords": [],
+    "OptionalKeywords": [ "телефон", "мобильн", "тариф", "интернет", "провайдер", "оператор", "SIM-карт", "пополнить", "02", "Orange", "Telekom", "4ka", "4ка", "безлимит" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "был", "купил", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "ходить", "брал", "нашёл", "нашла", "нашли" ]
   },
   {
     "Name": "Lawyers",
     "Message": " 'Юридическая помощь' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.w1zigybjj3cb",
-    "MandatoryKeywords": ["юрист"],
-    "OptionalKeywords": [ "юридич", "помощ", "адвокат", "консультац"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["был", "купил", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "ходить", "брал", "нашёл", "нашла", "нашли"]
+    "MandatoryKeywords": [ "юрист" ],
+    "OptionalKeywords": [ "юридич", "помощ", "адвокат", "суд" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "был", "купил", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "ходить", "брал", "нашёл", "нашла", "нашли" ]
   },
   {
     "Name": "Pets",
     "Message": " 'Для владельцев животных' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.6vjdwas291mc",
-    "MandatoryKeywords": ["ветеринар"],
-    "OptionalKeywords": [ "кошк", "собак", "животн", "клиник", "чипир", "привить", "корм", "приют", "передержк"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["был", "купил", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "ходить", "брал", "нашёл", "нашла", "нашли"]
+    "MandatoryKeywords": [ "ветеринар" ],
+    "OptionalKeywords": [ "кошк", "собак", "животн", "клиник", "чипир", "привить", "корм", "приют", "передержк" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "был", "купил", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "чипировал", "привил", "ходить", "брал", "нашёл", "нашла", "нашли" ]
   },
   {
     "Name": "For children",
     "Message": " 'Досуг, курсы и занятия для детей' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.cv4lliag87gk",
     "MandatoryKeywords": [],
-    "OptionalKeywords": [ "досуг", "дети", "зоопарк", "тренировк", "музык", "музе", "библиотек"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["был", "купил", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "ходить", "брал", "нашёл", "нашла", "нашли"]
+    "OptionalKeywords": [ "досуг", "дети", "зоопарк", "тренер", "тренировк", "музык", "музе", "библиотек" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "был", "купил", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "ходить", "брал", "нашёл", "нашла", "нашли" ]
   },
   {
     "Name": "Post",
     "Message": " 'Отправка посылок в Украину' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.jgkfbxnymt2e",
     "MandatoryKeywords": [],
-    "OptionalKeywords": [ "почт", "посылк", "отправить", "письмо", "передать"],
-    "AtLeastCount": 2,
-    "NotKeywords": ["был", "купил", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "ходить", "брал", "нашёл", "нашла", "нашли"]
+    "OptionalKeywords": [ "почт", "посылк", "отправить", "письмо", "передать" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "был", "купил", "ходил", "пойду", "хожу", "предлага", "советую", "рекомендую", "ходить", "брал", "нашёл", "нашла", "нашли" ]
   }
 ]

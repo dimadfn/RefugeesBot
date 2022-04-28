@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Net;
+using System.Text;
 using System.Text.Json;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
@@ -11,10 +12,15 @@ namespace TelegramBot
 {
     public class ChannelHandler
     {
-        private readonly List<DictionaryItem> _rulesDictionary;
+        private List<DictionaryItem> _rulesDictionary;
 
         public ChannelHandler(CancellationTokenSource cts)
         {
+            //var rules = File.ReadAllText("Dictionaries.json");
+            //var rules = new WebClient().DownloadString("https://drive.google.com/uc?export=download&id=1f6PJtPOuc31oRYcKp9AdMVf2apWi7acU");
+            //_rulesDictionary = JsonSerializer.Deserialize<List<DictionaryItem>>(rules);
+
+            
             var botClient = new TelegramBotClient("5304162311:AAG4ngGCK5Kaf9BglhztXAsTl4xt2eF1S1U");
             var receiverOptions = new ReceiverOptions();
             botClient.StartReceiving(
@@ -22,12 +28,7 @@ namespace TelegramBot
                 HandleErrorAsync,
                 receiverOptions,
                 cts.Token);
-            var rules = File.ReadAllText("Dictionaries.json");
-            _rulesDictionary = JsonSerializer.Deserialize<List<DictionaryItem>>(rules);
-            Console.OutputEncoding = Encoding.UTF8;
-            //var me = await botClient.GetMeAsync();
         }
-
 
         private async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update,
             CancellationToken cancellationToken)
@@ -38,7 +39,12 @@ namespace TelegramBot
             // Only process text messages
             if (update.Message!.Type != MessageType.Text)
                 return;
-
+            if (update.Message.ReplyToMessage != null)
+                return;
+            //var rules = new WebClient().DownloadString("https://drive.google.com/uc?export=download&id=1f6PJtPOuc31oRYcKp9AdMVf2apWi7acU");
+            var rules = File.ReadAllText("Dictionaries.json");
+            _rulesDictionary = JsonSerializer.Deserialize<List<DictionaryItem>>(rules);
+            
             var chatId = update.Message.Chat.Id;
             var messageText = update.Message.Text.ToLower();
             messageText = messageText.Replace("ё", "е");
@@ -49,7 +55,7 @@ namespace TelegramBot
             foreach (var rule in _rulesDictionary)
             {
                 if (rule.NotKeywords.Any(_ => messageText.Contains(_)))
-                    break;
+                    continue;
 
                 if (rule.MandatoryKeywords.Any() && rule.MandatoryKeywords.All(_ => messageText.Contains(_)))
                     message = GetMessage(rule);
