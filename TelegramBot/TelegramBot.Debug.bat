@@ -1,0 +1,1 @@
+TelegramBot.exe debug

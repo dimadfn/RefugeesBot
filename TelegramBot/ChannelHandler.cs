@@ -13,14 +13,15 @@ namespace TelegramBot
         private Dictionary<string, uint> _alreadySuggested = new(10000);
         private List<DictionaryItem> _rulesDictionary;
         private uint lastSuggested;
+        private bool _rememberUser;
 
-        public ChannelHandler(CancellationTokenSource cts)
+        public ChannelHandler(CancellationTokenSource cts, bool rememberUser)
         {
             //var rules = File.ReadAllText("Dictionaries.json");
             //var rules = new WebClient().DownloadString("https://drive.google.com/uc?export=download&id=1f6PJtPOuc31oRYcKp9AdMVf2apWi7acU");
             //_rulesDictionary = JsonSerializer.Deserialize<List<DictionaryItem>>(rules);
 
-
+            _rememberUser = rememberUser;
             var botClient = new TelegramBotClient("5304162311:AAG4ngGCK5Kaf9BglhztXAsTl4xt2eF1S1U");
             var receiverOptions = new ReceiverOptions();
             botClient.StartReceiving(
@@ -83,15 +84,25 @@ namespace TelegramBot
 
             if (message != null)
             {
-                if (update.Message.From != null &&
-                    _alreadySuggested.ContainsKey(message.RuleName + "_" + update.Message.From.Id))
+                if (!_rememberUser && (update.Message.From != null &&
+                    _alreadySuggested.ContainsKey(message.RuleName + "_" + update.Message.From.Id)))
                     return;
 
-                await botClient.SendTextMessageAsync(chatId, message.Message,
-                    replyToMessageId: update.Message.MessageId,
-                    disableWebPagePreview: true,
-                    parseMode: ParseMode.Html,
-                    cancellationToken: cancellationToken);
+                try
+                {
+
+                    await botClient.SendTextMessageAsync(chatId, message.Message,
+                        replyToMessageId: update.Message.MessageId,
+                        disableWebPagePreview: true,
+                        parseMode: ParseMode.Html,
+                        cancellationToken: cancellationToken);
+                }
+                catch (Exception ex) 
+                {
+                    Console.WriteLine($"{ex.Message} - {ex?.InnerException}");
+
+                    return;
+                }
 
                 _alreadySuggested.Add(message.RuleName + "_" + update.Message.From.Id, lastSuggested++);
                 if (lastSuggested > 9990)

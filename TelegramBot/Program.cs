@@ -8,10 +8,12 @@ namespace RefugeesBot
         private static async Task Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            bool rememberUser = args.Any(_ => _ == "debug");
 
+            Console.WriteLine($"Bot run in [debug={rememberUser}] mode.");
 
             var cts = new CancellationTokenSource();
-            new ChannelHandler(cts);
+            new ChannelHandler(cts, rememberUser);
             Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Start listening ");
             Console.ReadLine();
