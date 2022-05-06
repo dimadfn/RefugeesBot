@@ -10,10 +10,10 @@ namespace TelegramBot
 {
     public class ChannelHandler
     {
+        private readonly bool _rememberUser;
         private Dictionary<string, uint> _alreadySuggested = new(10000);
         private List<DictionaryItem> _rulesDictionary;
         private uint lastSuggested;
-        private bool _rememberUser;
 
         public ChannelHandler(CancellationTokenSource cts, bool rememberUser)
         {
@@ -84,8 +84,8 @@ namespace TelegramBot
 
             if (message != null)
             {
-                if (!_rememberUser && (update.Message.From != null &&
-                    _alreadySuggested.ContainsKey(message.RuleName + "_" + update.Message.From.Id)))
+                if (!_rememberUser && update.Message.From != null &&
+                    _alreadySuggested.ContainsKey(message.RuleName + "_" + update.Message.From.Id))
                     return;
 
                 try
@@ -97,7 +97,7 @@ namespace TelegramBot
                         parseMode: ParseMode.Html,
                         cancellationToken: cancellationToken);
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     Console.WriteLine($"{ex.Message} - {ex?.InnerException}");
 
