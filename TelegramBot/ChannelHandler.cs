@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Net;
+using System.Text.Json;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Extensions.Polling;
@@ -10,18 +11,24 @@ namespace TelegramBot
 {
     public class ChannelHandler
     {
-        private readonly bool _rememberUser;
+        private readonly bool _repeatSuggestionToSameUser;
         private Dictionary<string, uint> _alreadySuggested = new(10000);
-        private List<DictionaryItem> _rulesDictionary;
-        private uint lastSuggested;
+        private List<DictionaryItem> _rulesDictionary = null;
+        private uint lastSuggested = 0;
 
-        public ChannelHandler(CancellationTokenSource cts, bool rememberUser)
+        public ChannelHandler(CancellationTokenSource cts, bool repeatSuggestionToSameUser)
         {
             //var rules = File.ReadAllText("Dictionaries.json");
             //var rules = new WebClient().DownloadString("https://drive.google.com/uc?export=download&id=1f6PJtPOuc31oRYcKp9AdMVf2apWi7acU");
             //_rulesDictionary = JsonSerializer.Deserialize<List<DictionaryItem>>(rules);
 
-            _rememberUser = rememberUser;
+            var rules = File.ReadAllText("Dictionaries.ru.json");
+            _rulesDictionary = JsonSerializer.Deserialize<List<DictionaryItem>>(rules);
+
+            rules = File.ReadAllText("Dictionaries.ua.json");
+            _rulesDictionary.AddRange(JsonSerializer.Deserialize<List<DictionaryItem>>(rules));
+
+            _repeatSuggestionToSameUser = repeatSuggestionToSameUser;
             var botClient = new TelegramBotClient("5304162311:AAG4ngGCK5Kaf9BglhztXAsTl4xt2eF1S1U");
             var receiverOptions = new ReceiverOptions();
             botClient.StartReceiving(
@@ -44,12 +51,6 @@ namespace TelegramBot
                 return;
 
             //var rules = new WebClient().DownloadString("https://drive.google.com/uc?export=download&id=1f6PJtPOuc31oRYcKp9AdMVf2apWi7acU");
-            var rules = File.ReadAllText("Dictionaries.ru.json");
-            _rulesDictionary = JsonSerializer.Deserialize<List<DictionaryItem>>(rules);
-
-            rules = File.ReadAllText("Dictionaries.ua.json");
-            _rulesDictionary.AddRange(JsonSerializer.Deserialize<List<DictionaryItem>>(rules));
-
 
             var chatId = update.Message.Chat.Id;
             var messageText = update.Message.Text.ToLower();
@@ -84,18 +85,28 @@ namespace TelegramBot
 
             if (message != null)
             {
-                if (!_rememberUser && update.Message.From != null &&
+                if (!_repeatSuggestionToSameUser && update.Message.From != null &&
                     _alreadySuggested.ContainsKey(message.RuleName + "_" + update.Message.From.Id))
                     return;
 
                 try
                 {
-
                     await botClient.SendTextMessageAsync(chatId, message.Message,
                         replyToMessageId: update.Message.MessageId,
                         disableWebPagePreview: true,
                         parseMode: ParseMode.Html,
                         cancellationToken: cancellationToken);
+
+                    _alreadySuggested.TryAdd(message.RuleName + "_" + update.Message.From.Id, lastSuggested++);
+                    if (lastSuggested > 9000)
+                    {
+                        var asl = _alreadySuggested.ToList();
+                        var maxVal = asl.Max(x => x.Value) - 100;
+
+                        _alreadySuggested = asl.Where(_ => _.Value > maxVal)
+                            .ToDictionary(key => key.Key, val => (uint)0);
+                        lastSuggested = 0;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -104,19 +115,7 @@ namespace TelegramBot
                     return;
                 }
 
-                _alreadySuggested.Add(message.RuleName + "_" + update.Message.From.Id, lastSuggested++);
-                if (lastSuggested > 9990)
-                {
-                    _alreadySuggested = _alreadySuggested.ToList().Where(_ => _.Value > 100)
-                        .ToDictionary(key => key.Key, val => val.Value);
-                }
             }
-        }
-
-        private string GetMessage(DictionaryItem msg)
-        {
-            return
-                $"Добрый день! Возможно вам поможет закреплённый документ, раздел <a href=\"{msg.Url}\">{msg.Message}</a>";
         }
 
         private Task HandleErrorAsync(ITelegramBotClient botClient, Exception exception,

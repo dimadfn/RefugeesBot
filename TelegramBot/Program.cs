@@ -7,13 +7,16 @@ namespace RefugeesBot
     {
         private static async Task Main(string[] args)
         {
+            
+            
+            
             Console.WriteLine("Hello World!");
-            bool rememberUser = args.Any(_ => _ == "debug");
+            bool repeatSuggestionToSameUser = args.Any(_ => _ == "debug");
 
-            Console.WriteLine($"Bot run in [debug={rememberUser}] mode.");
+            Console.WriteLine($"Bot run in [debug={repeatSuggestionToSameUser}] mode.");
 
             var cts = new CancellationTokenSource();
-            new ChannelHandler(cts, rememberUser);
+            new ChannelHandler(cts, repeatSuggestionToSameUser);
             Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Start listening ");
             Console.ReadLine();
