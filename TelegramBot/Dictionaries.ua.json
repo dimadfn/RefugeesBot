@@ -1,12 +1,21 @@
 ﻿[
   {
+    "Name": "Help center",
+    "Message": " 'Единый центр помощи' ",
+    "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.m4g67xy0gfzb",
+    "MandatoryKeywords": ["Боттов", "ботова", "ботовой", "ООН", "TENENET"],
+    "OptionalKeywords": [ "центр", "допомог", "красн", "червоний", "крест", "хрест"],
+    "AtLeastCount": 2,
+    "NotKeywords": [ "найшла", "найшло", "найшли", "предлага", "советую", "рекомендую", "раджу", "пропоную"]
+  },
+  {
     "Name": "Appartman",
     "Message": " 'Житло' ",
-    "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.m4g67xy0gfzb",
+    "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.sxqfa0b8ljnb",
     "MandatoryKeywords": [],
     "OptionalKeywords": [ "квартир", "кiмнат", "житло", "ночув", "аренд", "зняти" ],
     "AtLeastCount": 1,
-    "NotKeywords": [ "знайшла", "знашов", "знайшли", "пропону", "раджу", "рекомендую" ]
+    "NotKeywords": [ "знайшла", "знашов", "знайшли", "пропону", "раджу", "рекомендую", "знятися" ]
   },
   {
     "Name": "Realtor",
@@ -19,12 +28,21 @@
   },
   {
     "Name": "Humanitarian assistance",
-    "Message": " 'Матеріальна гуманітарна допомога' ",
+    "Message": " 'Матеріальна допомога' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.7xsrc1b5w21x",
     "MandatoryKeywords": [],
     "OptionalKeywords": [ "гуманітар", "матеріальн", "їжа", "речі", "пункт", "аупарк", "aupark", "борi", "bori" ],
     "AtLeastCount": 1,
     "NotKeywords": [ "поїду", "знайшла", "знашов", "знайшли", "пропону", "раджу", "рекомендую", "отрима", "раджу", "рекомендую" ]
+  },
+  {
+    "Name": "Dentist",
+    "Message": " 'Стоматология' ",
+    "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.mep1azer419u",
+    "MandatoryKeywords": [ "стоматолог" ],
+    "OptionalKeywords": [ "зуб", "пломба" ],
+    "AtLeastCount": 1,
+    "NotKeywords": [ "знайшла", "знашов", "знайшли", "пропону", "раджу", "рекомендую", "був", "отрима", "надам", "надаю" ]
   },
   {
     "Name": "Urgent care",
@@ -34,7 +52,6 @@
     "OptionalKeywords": [ "екстренная", "швижк", "гостра", "біль", "болить" ],
     "AtLeastCount": 1,
     "NotKeywords": [ "знайшла", "знашов", "знайшли", "пропону", "раджу", "рекомендую", "швидще", "більш" ]
-
   },
   {
     "Name": "Psychological help",
@@ -42,15 +59,6 @@
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.vbvdnqedq6xs",
     "MandatoryKeywords": [ "психолог" ],
     "OptionalKeywords": [],
-    "AtLeastCount": 1,
-    "NotKeywords": [ "знайшла", "знашов", "знайшли", "пропону", "раджу", "рекомендую", "був", "отрима", "надам", "надаю" ]
-  },
-  {
-    "Name": "Dentist",
-    "Message": " 'Стоматология' ",
-    "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.mep1azer419u",
-    "MandatoryKeywords": [ "стоматолог" ],
-    "OptionalKeywords": [ "зуб", "пломба" ],
     "AtLeastCount": 1,
     "NotKeywords": [ "знайшла", "знашов", "знайшли", "пропону", "раджу", "рекомендую", "був", "отрима", "надам", "надаю" ]
   },
@@ -95,7 +103,7 @@
     "Message": " 'Регистрация в полиции' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.1w46mu48m2gi",
     "MandatoryKeywords": [],
-    "OptionalKeywords": [ "реєсттрац", "міграц", "реєструватися", "поліц", "проживан", "розміщен", "адреса", "притуло", "статус", "біжен" ],
+    "OptionalKeywords": [ "реєсттрац", "міграц", "реєструватися", "поліц", "проживан", "розміщен", "адреса", "притуло", "оформити статус", "отримати біжен" ],
     "AtLeastCount": 1,
     "NotKeywords": [ "знайшла", "знашов", "знайшли", "пропону", "раджу", "рекомендую" ]
   },
@@ -106,7 +114,7 @@
     "MandatoryKeywords": [],
     "OptionalKeywords": [ "пособи", "грощ", "грош", "державн", "компенсац" ],
     "AtLeastCount": 1,
-    "NotKeywords": [ "прйишла", "прйишли", "отримав", "прийдут", "прийде", "раджу", "рекомендую" ]
+    "NotKeywords": [ "прйишла", "прйишли", "отримав", "прийдут", "прийде", "раджу", "рекомендую", "гроші світу" ]
   },
   {
     "Name": "Bank account",
@@ -149,7 +157,7 @@
     "Message": " 'Личный транспорт' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.kbg3aauvkkg",
     "MandatoryKeywords": [],
-    "OptionalKeywords": [ "авто", "машин", "шиномонтаж", "резину", "гуму", "шины", "трасс", "віньетк", "віньєтк", "дорог", "страхов", "страхів", "гринкарт", "парків", "зелену карту" ],
+    "OptionalKeywords": [ "авто", "машин", "шиномонтаж", "СТО", "резину", "гуму", "шины", "трасс", "віньетк", "віньєтк", "дорог", "страхов", "страхів", "гринкарт", "парків", "зелену карту" ],
     "AtLeastCount": 1,
     "NotKeywords": [ "відкрив", "требуются", "сходив", "відкрою", "схожу", "закрыти", "отримати", "раджу", "рекомендую", "дорог", "дорогий", "дорога", "дороге", "автомат" ]
   },
@@ -158,7 +166,7 @@
     "Message": " 'Поиск работы' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.2non377v3q24",
     "MandatoryKeywords": [ "шука", "прац" ],
-    "OptionalKeywords": [ "работ", "прац", "робот", "ваканс", "підробіток" ],
+    "OptionalKeywords": [ "работ", "прац", "ваканс", "підробіток" ],
     "AtLeastCount": 1,
     "NotKeywords": [ "відкрив", "пропону", "работн", "работает", "работаю", "работать", "сходив", "відкрою", "схожу", "закрыти", "отримати", "раджу", "рекомендую", "працює", "працюють", "працювати", "требу" ]
   },
@@ -221,7 +229,7 @@
     "Message": " 'Консульство Украины в Словакии' ",
     "Url": "https://docs.google.com/document/d/16lVkIc58Hw288B8NXHGQYXCaavRkHERcd3_3uKjFSaQ/edit#heading=h.f3vzto3nuymb",
     "MandatoryKeywords": [],
-    "OptionalKeywords": [ "консульс", "посольс", "паспорт", "загран", "закордон" ],
+    "OptionalKeywords": [ "консульс", "посольс", "загран", "закордон" ],
     "AtLeastCount": 1,
     "NotKeywords": [ "був", "купив", "ходив", "пійду", "ходжу", "пропрону", "раджу", "рекомендую", "брав", "знашов", "знайшла", "знайшли" ]
   },
